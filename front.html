@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+
+<html lang="en" ng-app = "dw">
+<head>
+
+<script type="text/javascript" src="angular.js"></script>
+<script type="text/javascript" src="app.js"></script>
+
+	<title>
+		My Calculator
+	</title>
+</head>
+<body>
+<h1>
+	Calculator app
+</h1>
+
+<div ng-controller="Ctrl1">
+	<input type="text" name="Value1" ng-model="value1">
+	<span ng-bind="operator"></span>
+	<input type="text" name="Value2" ng-model="value2">
+
+	<button ng-click="operate()">=</button>
+	<span>{{answer}}</span>
+	<div>
+	Choose Operations :
+	<input type="button" ng-click = "operator = '+' " value="+">
+	<input type="button" ng-click = "operator = '-' " value="-">
+	<input type="button" ng-click = "operator = '*' " value="*">
+	<input type="button" ng-click = "operator = '/' " value="/">
+
+	<p ng-bind="operator"></p>
+	</div>
+
+	
+</div>
+
+<div ng-controller = "Ctrl3" >
+	<form>
+		<select name= "bus" ng-model = "myvar" ng-options = "x for x in empno">
+			<!--<option value = "Select" ng-model = "myvar">select</option>
+			<option value="volvo" ng-model = "myvar">Volvo</option>-->
+		</select>
+		
+		<button ng-click = "see()">submit</button>
+		<span>{{myvar}} is {{chosen}}</span>
+
+	</form>
+</div>
+
+<form action="register.php" action = "GET">
+	EName:<br><input type = "text" name = "contact_name"><br>
+	ENo:<br><input type = "text" name ="contact_no"><br>
+	JOB:<br><input type = "text" name ="contact_job"><br>
+	Mgr:<br><input type = "text" name ="contact_mgr"><br>
+	hire-date:<br><input type = "text" name ="contact_date"><br>
+	sal:<br><input type = "text" name ="contact_sal"><br>
+	comm:<br><input type = "text" name ="contact_comm"><br>
+	deptno:<br><input type = "text" name ="contact_deptno"><br>
+	<input type ="submit" value ="Register">
+</form>
+
+</body>
+</html>
